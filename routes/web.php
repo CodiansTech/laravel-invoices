@@ -15,11 +15,11 @@ Auth::routes();
 Route::group(['middleware' => 'auth'], function () {
     Route::get('pages-logout', 'RoutingController@logout');
     Route::get('/', 'RoutingController@index');
-    Route::get('/main', 'RoutingController@main');
+    Route::get('/invoice/list', 'RoutingController@main');
 
 
 
     Route::resource('invoices', 'InvoicesController');
-
+    Route::resource('sales','SalesController');
 });
 

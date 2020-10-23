@@ -154,11 +154,11 @@
                 </div>
             </li>
 
-            <li class="dropdown notification-list" data-toggle="tooltip" data-placement="left" title="Settings">
+            {{-- <li class="dropdown notification-list" data-toggle="tooltip" data-placement="left" title="Settings">
                 <a href="javascript:void(0);" class="nav-link right-bar-toggle">
                     <i data-feather="settings"></i>
                 </a>
-            </li>
+            </li> --}}
 
             <li class="dropdown notification-list align-self-center profile-dropdown">
                 <a class="nav-link dropdown-toggle nav-user mr-0" data-toggle="dropdown" href="#" role="button"

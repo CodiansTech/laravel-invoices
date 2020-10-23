@@ -10,10 +10,37 @@
     </li>
 
     <li>
-        <a href="/main">
-            <i data-feather="grid"></i>
-            <span> Invoices </span>
+        <a href="javascript: void(0);">
+            <i data-feather="dollar-sign"></i>
+            <span> Banking </span>
+            <span class="dollar-sign"></span>
         </a>
+
+        <ul class="nav-second-level" aria-expanded="false">
+            <li>
+                <a href="/sales">Accounts</a>
+            </li>
+            <li>
+                <a href="/invoice/list">Transations</a>
+            </li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="javascript: void(0);">
+            <i data-feather="trending-up"></i>
+            <span> Sales </span>
+            <span class="dollar-sign"></span>
+        </a>
+
+        <ul class="nav-second-level" aria-expanded="false">
+            <li>
+                <a href="/sales">Sales</a>
+            </li>
+            <li>
+                <a href="/invoice/list">Invoices</a>
+            </li>
+        </ul>
     </li>
 
     <li>

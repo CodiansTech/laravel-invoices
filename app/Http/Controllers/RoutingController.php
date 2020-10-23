@@ -25,6 +25,9 @@ class RoutingController extends Controller
         return view('invoices', compact('invoices'));
     }
 
+    public function sales(){
+        return view('pages.sales');
+    }
     /**
      * Display a view based on first route param
      *
