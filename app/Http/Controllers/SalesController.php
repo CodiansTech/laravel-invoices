@@ -14,7 +14,8 @@ class SalesController extends Controller
      */
     public function index()
     {
-        return view('pages.sales.index');
+        $sales = Sales::all();
+        return view('pages.sales.index', compact('sales'));
     }
 
     /**
@@ -36,8 +37,17 @@ class SalesController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required',
-            'detail' => 'required',
+            'item_name' => 'required',
+            'client_name' => 'required',
+            'print_postion' => 'required',
+            'print_size' => 'required',
+            'size' => 'required',
+            'phone_number' => 'required',
+            'country' => 'required',
+            'address' => 'required',
+            'price' => 'required',
+            'shipping_price' => 'required',
+            'status' => 'required',
         ]);
   
         Sales::create($request->all());
@@ -54,7 +64,7 @@ class SalesController extends Controller
      */
     public function show(Sales $sales)
     {
-        //
+        return view('pages.sales.show',compact('sales'));
     }
 
     /**
@@ -65,7 +75,7 @@ class SalesController extends Controller
      */
     public function edit(Sales $sales)
     {
-        //
+        return view('pages.sales.show',compact('sales'));
     }
 
     /**
@@ -77,7 +87,24 @@ class SalesController extends Controller
      */
     public function update(Request $request, Sales $sales)
     {
-        //
+        $request->validate([
+            'item_name' => 'required',
+            'client_name' => 'required',
+            'print_postion' => 'required',
+            'print_size' => 'required',
+            'size' => 'required',
+            'phone_number' => 'required',
+            'country' => 'required',
+            'address' => 'required',
+            'price' => 'required',
+            'shipping_price' => 'required',
+            'status' => 'required',
+        ]);
+  
+        $product->update($request->all());
+  
+        return redirect()->route('pages.sales.index')
+                        ->with('success','Sale updated successfully');
     }
 
     /**
@@ -88,6 +115,9 @@ class SalesController extends Controller
      */
     public function destroy(Sales $sales)
     {
-        //
+        $sales->delete();
+  
+        return redirect()->route('pages.sales.index')
+                        ->with('success','Sales deleted successfully');
     }
 }

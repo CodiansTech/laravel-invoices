@@ -9,7 +9,7 @@
         </a>
     </li>
 
-    <li>
+    {{-- <li>
         <a href="javascript: void(0);">
             <i data-feather="dollar-sign"></i>
             <span> Banking </span>
@@ -24,7 +24,7 @@
                 <a href="/invoice/list">Transations</a>
             </li>
         </ul>
-    </li>
+    </li> --}}
 
     <li>
         <a href="javascript: void(0);">

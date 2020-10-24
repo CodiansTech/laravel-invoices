@@ -15,6 +15,17 @@ class CreateSalesTable extends Migration
     {
         Schema::create('sales', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('item_name');
+            $table->string('client_name');
+            $table->boolean('print_postion')->default(0);
+            $table->string('print_size');
+            $table->string('size');
+            $table->string('phone_number');
+            $table->string('country');
+            $table->string('address');
+            $table->double('price');
+            $table->double('shipping_price');
+            $table->boolean('status')->default(0);
             $table->timestamps();
         });
     }
