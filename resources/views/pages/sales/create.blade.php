@@ -26,7 +26,7 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                <h4 class="header-title mt-0">Input Types</h4>
+                <h4 class="header-title mt-0">Create Sale</h4>
 
                 <form class="form-horizontal" action="{{ route('sales.store') }}" method="POST">
                     @csrf

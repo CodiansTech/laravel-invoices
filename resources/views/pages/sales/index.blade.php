@@ -26,7 +26,8 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="header-title mt-0 mb-1">Basic Data Table</h4>
+                    <h4 class="header-title mt-0 mb-1">Sales</h4>
+                    <a href="{{ route('sales.create') }}" class="btn btn-primary float-right">Create</a>
                     {{-- <p class="sub-header">
                         DataTables has most features enabled by default, so all you need to do to use it with your own tables is to call the construction
                         function:
