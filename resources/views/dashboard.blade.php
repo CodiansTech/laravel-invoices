@@ -273,7 +273,7 @@
 <!-- end row -->
 
 <!-- widgets -->
-<div class="row">
+{{-- <div class="row">
     <div class="col-xl-4">
         <div class="card">
             <div class="card-body pt-2">
@@ -605,7 +605,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 <!-- end row -->
 @endsection
 

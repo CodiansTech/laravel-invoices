@@ -43,7 +43,7 @@ class InvoicesController extends Controller
                 );
             }
         }
-        return 'Soon';
+        return view('invoices.index');
     }
 
     public function show($invoice_id)
