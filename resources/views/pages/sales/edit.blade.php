@@ -28,6 +28,7 @@
             <div class="card-body">
                 <h4 class="header-title mt-0">Create Sale</h4>
 
+
                 @if ($errors->any())
                     <div class="alert alert-danger">
                         <strong>Whoops!</strong> There were some problems with your input.<br><br>
@@ -39,31 +40,32 @@
                     </div>
                 @endif
 
-                <form class="form-horizontal" action="{{ route('sales.store') }}" method="POST">
+                <form class="form-horizontal" action="{{ route('sales.update', $sale->id) }}" method="POST">
                     @csrf
+                    @method('PUT')
                     <div class="row">
                         <div class="col">
                             <div class="form-group row">
                                 <label class="col-lg-2 col-form-label" for="simpleinput">Item</label>
                                 <div class="col-lg-10">
                                     <input type="text" class="form-control" placeholder="Item Name"
-                                        id="item_name" name="item_name">
+                                id="item_name" name="item_name" value="{{ $sale->item_name }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-lg-2 col-form-label" for="example-email">Client</label>
                                 <div class="col-lg-10">
                                     <input type="text" class="form-control" placeholder="Client Name"
-                                    id="client_name" name="client_name">
+                                    id="client_name" name="client_name" value="{{ $sale->client_name }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-lg-2 col-form-label">Print Position</label>
                                 <div class="col-lg-10">
                                     <select class="form-control custom-select" name="print_postion">
-                                        <option value="0">Front</option>
-                                        <option value="1">Back</option>
-                                        <option value="2">Front and Back</option>
+                                        <option {{($sale->print_postion === 0) ? 'selected' : ''}} value="0">Front</option>
+                                        <option {{($sale->print_postion === 1) ? 'selected' : ''}} value="1">Back</option>
+                                        <option {{($sale->print_postion === 2) ? 'selected' : ''}} value="2">Front and Back</option>
                                     </select>
                                 </div>
                             </div>
@@ -72,7 +74,7 @@
                                 <label class="col-lg-2 col-form-label" for="example-email">Print Size</label>
                                 <div class="col-lg-10">
                                     <input type="text" class="form-control" placeholder="Print Size"
-                                    id="print_size" name="print_size">
+                                    id="print_size" name="print_size" value="{{ $sale->print_size }}">
                                 </div>
                             </div>
                             {{-- <div class="form-group row">
@@ -86,7 +88,7 @@
                                 <label class="col-lg-2 col-form-label" for="example-email">Size</label>
                                 <div class="col-lg-10">
                                     <input type="text" class="form-control" placeholder="Size"
-                                    id="size" name="size">
+                                    id="size" name="size" value="{{ $sale->size }}">
                                 </div>
                             </div>
 
@@ -94,7 +96,7 @@
                                 <label class="col-lg-2 col-form-label" for="example-email">Phone Number</label>
                                 <div class="col-lg-10">
                                     <input type="text" class="form-control" placeholder="Phone Number"
-                                    id="phone_number" name="phone_number">
+                                    id="phone_number" name="phone_number" value="{{ $sale->phone_number }}">
                                 </div>
                             </div>
 
@@ -102,7 +104,7 @@
                                 <label class="col-lg-2 col-form-label" for="example-email">County</label>
                                 <div class="col-lg-10">
                                     <input type="text" class="form-control" placeholder="Country"
-                                    id="country" name="country">
+                                    id="country" name="country" value="{{ $sale->country }}">
                                 </div>
                             </div>
 
@@ -110,7 +112,7 @@
                                 <label class="col-lg-2 col-form-label" for="example-email">Address</label>
                                 <div class="col-lg-10">
                                     <input type="text" class="form-control" placeholder="Address"
-                                    id="address" name="address">
+                                    id="address" name="address" value="{{ $sale->address }}">
                                 </div>
                             </div>
 
@@ -118,7 +120,7 @@
                                 <label class="col-lg-2 col-form-label" for="example-placeholder">Price</label>
                                 <div class="col-lg-10">
                                     <input type="text" class="form-control" placeholder="Price"
-                                        id="price" name="price">
+                                        id="price" name="price" value="{{ $sale->price }}">
                                 </div>
                             </div>
                             
@@ -126,7 +128,7 @@
                                 <label class="col-lg-2 col-form-label" for="example-textarea">Shipping Price</label>
                                 <div class="col-lg-10">
                                     <input type="text" class="form-control" placeholder="Shipping Price"
-                                        id="shipping_price" name="shipping_price">
+                                        id="shipping_price" name="shipping_price" value="{{ $sale->shipping_price }}">
                                 </div>
                             </div>
 
@@ -134,9 +136,9 @@
                                 <label class="col-lg-2 col-form-label">Status</label>
                                 <div class="col-lg-10">
                                     <select class="form-control custom-select" name="status">
-                                        <option value="0">Pending</option>
-                                        <option value="1">Shipped</option>
-                                        <option value="2">Delivered</option>
+                                        <option {{($sale->status === 0) ? 'selected' : ''}} value="0">Pending</option>
+                                        <option {{($sale->status === 1) ? 'selected' : ''}} value="1">Shipped</option>
+                                        <option {{($sale->status === 2) ? 'selected' : ''}} value="2">Delivered</option>
                                     </select>
                                 </div>
                             </div>

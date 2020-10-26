@@ -73,9 +73,9 @@ class SalesController extends Controller
      * @param  \App\Sales  $sales
      * @return \Illuminate\Http\Response
      */
-    public function edit(Sales $sales)
+    public function edit(Sales $sale)
     {
-        return view('pages.sales.show',compact('sales'));
+        return view('pages.sales.edit',compact('sale'));
     }
 
     /**
@@ -85,7 +85,7 @@ class SalesController extends Controller
      * @param  \App\Sales  $sales
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Sales $sales)
+    public function update(Request $request, Sales $sale)
     {
         $request->validate([
             'item_name' => 'required',
@@ -101,9 +101,9 @@ class SalesController extends Controller
             'status' => 'required',
         ]);
   
-        $product->update($request->all());
+        $sale->update($request->all());
   
-        return redirect()->route('pages.sales.index')
+        return redirect()->route('sales.index')
                         ->with('success','Sale updated successfully');
     }
 
@@ -113,11 +113,11 @@ class SalesController extends Controller
      * @param  \App\Sales  $sales
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Sales $sales)
+    public function destroy(Sales $sale)
     {
-        $sales->delete();
+        $sale->delete();
   
-        return redirect()->route('pages.sales.index')
+        return redirect()->route('sales.index')
                         ->with('success','Sales deleted successfully');
     }
 }

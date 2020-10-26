@@ -26,6 +26,13 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
+
+                    @if ($message = Session::get('success'))
+                        <div class="alert alert-success">
+                            <p>{{ $message }}</p>
+                        </div>
+                    @endif
+                    
                     <h4 class="header-title mt-0 mb-1">Sales</h4>
                     <a href="{{ route('sales.create') }}" class="btn btn-primary float-right">Create</a>
                     {{-- <p class="sub-header">
@@ -47,6 +54,7 @@
                                 <th>Price</th>
                                 <th>Shipping Price</th>
                                 <th>Status</th>
+                                {{-- <th>Action</th> --}}
                             </tr>
                         </thead>
                     
@@ -76,6 +84,14 @@
                                 @elseif ($sale->status == 2)
                                     <td>Delivered</td>
                                 @endif 
+                                <td><a href="{{ route('sales.edit',$sale->id) }}" class="btn btn-sm btn-primary">Edit</a> 
+                                    <form action="{{ route('sales.destroy', $sale->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                        
+                                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                    </form>
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>
