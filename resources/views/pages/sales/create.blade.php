@@ -99,10 +99,18 @@
                             </div>
 
                             <div class="form-group row">
-                                <label class="col-lg-2 col-form-label" for="example-email">County</label>
+                                <label class="col-lg-2 col-form-label" for="example-email">Country</label>
                                 <div class="col-lg-10">
                                     <input type="text" class="form-control" placeholder="Country"
                                     id="country" name="country">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-lg-2 col-form-label" for="example-email">City</label>
+                                <div class="col-lg-10">
+                                    <input type="text" class="form-control" placeholder="City"
+                                    id="city" name="city">
                                 </div>
                             </div>
 

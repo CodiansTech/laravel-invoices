@@ -22,6 +22,7 @@ class CreateSalesTable extends Migration
             $table->string('size');
             $table->string('phone_number');
             $table->string('country');
+            $table->string('city');
             $table->string('address');
             $table->double('price');
             $table->double('shipping_price');

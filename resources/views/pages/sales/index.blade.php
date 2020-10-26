@@ -32,7 +32,7 @@
                             <p>{{ $message }}</p>
                         </div>
                     @endif
-                    
+
                     <h4 class="header-title mt-0 mb-1">Sales</h4>
                     <a href="{{ route('sales.create') }}" class="btn btn-primary float-right">Create</a>
                     {{-- <p class="sub-header">
@@ -50,6 +50,7 @@
                                 <th>Size</th>
                                 <th>Phone Number</th>
                                 <th>Country</th>
+                                <th>City</th>
                                 <th>Address</th>
                                 <th>Price</th>
                                 <th>Shipping Price</th>
@@ -74,6 +75,7 @@
                                 <td>{{ $sale->size }}</td>
                                 <td>{{ $sale->phone_number }}</td>
                                 <td>{{ $sale->country }}</td>
+                                <td>{{ $sale->city }}</td>
                                 <td>{{ $sale->address }}</td>
                                 <td>{{ $sale->price }}</td>
                                 <td>{{ $sale->shipping_price }}</td>
